@@ -1,0 +1,22 @@
+
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql : true
+        format_sql : true
+
+  h2:
+    console:
+      enabled:
+        true
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hiberante:type: trace
