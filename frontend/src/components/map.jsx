@@ -4,7 +4,7 @@ import { css } from '@emotion/react'
 import React, {useState} from 'react';
 import SearchBar from "./search_bar";
 import KakaoMap from "./kakao-map";
-import PatientList from "./patient_list";
+import Sidebar from "./sidebar";
 
 const mapStyle =css`
     display: flex;
@@ -21,7 +21,7 @@ const Map = ({rest}) => {
         <div className="Map" css={mapStyle}>
             <SearchBar onSearch={onSearch}/>
             <KakaoMap  keyword={keyword}/>
-            <PatientList keyword ={keyword} />
+            <Sidebar keyword ={keyword} rest ={rest}/>
         </div>
     )
 }

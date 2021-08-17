@@ -4,6 +4,7 @@ import {css} from "@emotion/react";
 
 const searchBarStyle =css`
     position: absolute;
+    z-index : 2;
 `
 
 const SearchBar = ({onSearch}) => {

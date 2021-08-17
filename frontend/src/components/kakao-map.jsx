@@ -2,17 +2,21 @@
 /** @jsxImportSource @emotion/react */
 import React, {useEffect, useState} from 'react';
 import {css} from "@emotion/react";
-
+import {atom, useRecoilState} from "recoil";
+import {placeState} from "../state/state";
 
 const mapStyle =css`
     width : 100vh;
     height : 100vh;
-    z-index : -1;
+    // z-index : ;
     flex: 8.5;
 `
 const KakaoMap = ({keyword}) => {
+    const [place, setPlace] = useRecoilState(placeState);
+
     const [lat, setLat] = useState(33.450701)
     const [lng, setLng] = useState(126.570667)
+
     useEffect(()=>{
         const container = document.getElementById('kakao_map'); //지도를 담을 영역의 DOM 레퍼런스
         let options = { //지도를 생성할 때 필요한 기본 옵션
@@ -20,14 +24,29 @@ const KakaoMap = ({keyword}) => {
             level: 4 //지도의 레벨(확대, 축소 정도)
         };
         let map = new kakao.maps.Map(container, options);
+        // kakao.maps.event.addListener(map, 'click', () =>{
+        //
+        // })
         // var infowindow = new kakao.maps.InfoWindow({zIndex:1});
         const ps = new kakao.maps.services.Places();
         // 키워드로 장소를 검색합니다
         ps.keywordSearch(keyword, placesSearchCB);
 
         function placesSearchCB(data, status) {
-            console.log(data);
-            console.log(`map: ${map.getCenter()}`)
+            console.log(data[0])
+            const {place_name, address_name, x, y, phone } = data[0];
+
+            setPlace((state) =>{
+                return  {
+                    "placeName" : place_name,
+                    "address_name" :address_name,
+                    "coordinateX" : x,
+                    "coordinateY" : y,
+                    "phoneNumber" : phone,
+                }
+            })
+            console.log(place)
+
             if (status === kakao.maps.services.Status.OK) {
                 const markers =data.map((place) => {
                     return new kakao.maps.Marker({
@@ -53,6 +72,7 @@ const KakaoMap = ({keyword}) => {
                     return a.distance-b.distance;
                 })
                 const {marker, distance} = sorted[0];
+
                 map.setCenter(marker.getPosition());
                 setLat(marker.getPosition().getLat())
                 setLng(marker.getPosition().getLng())
