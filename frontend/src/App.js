@@ -9,11 +9,11 @@ const responseState = atom({
     key : "patient",
     default: [],
 })
-const App = (props) => {
+const App = ({rest}) => {
     const [patient, setPatient] = useRecoilState(responseState);
     return(
         <div className="App">
-            <Map />
+            <Map  rest={rest}/>
         </div>
     )
 }
