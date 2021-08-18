@@ -1,14 +1,22 @@
 import axios from "axios";
 
 class Rest{
-    async savePatient({restaurantName, coordinateX, coordinateY, phoneNumber}){
+    async savePatient({placeName,addressName, coordinateX, coordinateY, phoneNumber, date}){
         const response =await axios.post("/places", {
-            restaurantName :restaurantName,
+            placeName: placeName,
+            addressName : addressName,
             coordinateX : coordinateX,
             coordinateY : coordinateY,
-            phoneNumber : phoneNumber
+            phoneNumber : phoneNumber,
+            date : date,
         })
         return response;
+    }
+    async getPatients(){
+        // return
+        const response = await axios.get("/places")
+        console.log(response)
+        return response.data;
     }
 }
 
