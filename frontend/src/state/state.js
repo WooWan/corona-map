@@ -4,7 +4,7 @@ export const placeState = atom({
     key: 'placeState',
     default: {
         "placeName" : "",
-        "jibun" : "",
+        "addressName" : "",
         "coordinateX" : 0.0,
         "coordinateY" : 0.0,
         "phoneNumber" : "",
