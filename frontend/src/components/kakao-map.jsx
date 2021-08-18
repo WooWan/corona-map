@@ -39,13 +39,12 @@ const KakaoMap = ({keyword}) => {
             setPlace((state) =>{
                 return  {
                     "placeName" : place_name,
-                    "address_name" :address_name,
+                    "addressName" :address_name,
                     "coordinateX" : x,
                     "coordinateY" : y,
                     "phoneNumber" : phone,
                 }
             })
-            console.log(place)
 
             if (status === kakao.maps.services.Status.OK) {
                 const markers =data.map((place) => {
