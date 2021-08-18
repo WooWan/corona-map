@@ -32,6 +32,7 @@ public class PlaceController {
         List<PlaceDto> collect = findPlaces.stream()
                 .map(place -> new PlaceDto(place))
                 .collect(Collectors.toList());
+        log.info("collect :{}", collect);
         return collect;
     }
 
