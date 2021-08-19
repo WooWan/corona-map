@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.coronamap.coronamap.controller.PlaceControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-13T16:51:31" hostname="WOOHO" time="1.965">
+  <properties/>
+  <testcase name="patient_Save()" classname="com.coronamap.coronamap.controller.PlaceControllerTest" time="1.965"/>
+  <system-out><![CDATA[01:51:16.071 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+01:51:16.110 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+01:51:16.213 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.coronamap.coronamap.controller.PlaceControllerTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+01:51:16.263 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.coronamap.coronamap.controller.PlaceControllerTest], using SpringBootContextLoader
+01:51:16.282 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.coronamap.coronamap.controller.PlaceControllerTest]: class path resource [com/coronamap/coronamap/controller/PlaceControllerTest-context.xml] does not exist
+01:51:16.285 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.coronamap.coronamap.controller.PlaceControllerTest]: class path resource [com/coronamap/coronamap/controller/PlaceControllerTestContext.groovy] does not exist
+01:51:16.286 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.coronamap.coronamap.controller.PlaceControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+01:51:16.288 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.coronamap.coronamap.controller.PlaceControllerTest]: PlaceControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+01:51:16.444 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.coronamap.coronamap.controller.PlaceControllerTest]
+01:51:16.728 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\wooho\toyproject\coronamap\build\classes\java\main\com\coronamap\coronamap\CoronamapApplication.class]
+01:51:16.734 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.coronamap.coronamap.CoronamapApplication for test class com.coronamap.coronamap.controller.PlaceControllerTest
+01:51:17.096 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.coronamap.coronamap.controller.PlaceControllerTest]: using defaults.
+01:51:17.098 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+01:51:17.183 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3995b40b, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@55d43b7b, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@5e62ab94, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@18835401, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@ca29ef6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@78d963fa, org.springframework.test.context.transaction.TransactionalTestExecutionListener@332c497e, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@318d3046, org.springframework.test.context.event.EventPublishingTestExecutionListener@29405daf, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1ab52dce, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4b83f05f, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1354f669, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@38d26c89, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@bbafd00, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5feff520]
+01:51:17.198 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@7cb940ff testClass = PlaceControllerTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@4b0cba73 testClass = PlaceControllerTest, locations = '{}', classes = '{class com.coronamap.coronamap.CoronamapApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@45b6f173, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@75a1f64b, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@7dde2995, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@58e694f, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3a25b28, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@3cdb4f5d], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> false]], class annotated with @DirtiesContext [false] with mode [null].
+01:51:17.237 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@7cb940ff testClass = PlaceControllerTest, testInstance = com.coronamap.coronamap.controller.PlaceControllerTest@522629d5, testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@4b0cba73 testClass = PlaceControllerTest, locations = '{}', classes = '{class com.coronamap.coronamap.CoronamapApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@45b6f173, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@75a1f64b, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@7dde2995, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@58e694f, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3a25b28, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@3cdb4f5d], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> false, 'org.springframework.test.context.event.ApplicationEventsTestExecutionListener.recordApplicationEvents' -> false]]].
+01:51:17.314 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.5.3)
+
+2021-08-14 01:51:18.353  INFO 6552 --- [    Test worker] c.c.c.controller.PlaceControllerTest     : Starting PlaceControllerTest using Java 11.0.11 on wooho with PID 6552 (started by wooho in C:\Users\wooho\toyproject\coronamap)
+2021-08-14 01:51:18.358  INFO 6552 --- [    Test worker] c.c.c.controller.PlaceControllerTest     : No active profile set, falling back to default profiles: default
+2021-08-14 01:51:20.585  INFO 6552 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-08-14 01:51:20.751  INFO 6552 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 145 ms. Found 1 JPA repository interfaces.
+2021-08-14 01:51:22.761  INFO 6552 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2021-08-14 01:51:22.796  INFO 6552 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-14 01:51:22.798  INFO 6552 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.50]
+2021-08-14 01:51:23.362  INFO 6552 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-14 01:51:23.363  INFO 6552 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4937 ms
+2021-08-14 01:51:23.507  INFO 6552 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-08-14 01:51:24.179  INFO 6552 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-08-14 01:51:24.199  INFO 6552 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2021-08-14 01:51:24.896  INFO 6552 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-08-14 01:51:25.116  INFO 6552 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-08-14 01:51:25.601  INFO 6552 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-08-14 01:51:26.102  INFO 6552 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-08-14 01:51:28.185 DEBUG 6552 --- [    Test worker] org.hibernate.SQL                        : 
+    
+    drop table if exists place CASCADE 
+Hibernate: 
+    
+    drop table if exists place CASCADE 
+2021-08-14 01:51:28.189 DEBUG 6552 --- [    Test worker] org.hibernate.SQL                        : 
+    
+    drop sequence if exists hibernate_sequence
+Hibernate: 
+    
+    drop sequence if exists hibernate_sequence
+2021-08-14 01:51:28.196 DEBUG 6552 --- [    Test worker] org.hibernate.SQL                        : create sequence hibernate_sequence start with 1 increment by 1
+Hibernate: create sequence hibernate_sequence start with 1 increment by 1
+2021-08-14 01:51:28.201 DEBUG 6552 --- [    Test worker] org.hibernate.SQL                        : 
+    
+    create table place (
+       place_id bigint not null,
+        coordinatex double not null,
+        coordinatey double not null,
+        phone_number varchar(255),
+        restaurant_name varchar(255),
+        primary key (place_id)
+    )
+Hibernate: 
+    
+    create table place (
+       place_id bigint not null,
+        coordinatex double not null,
+        coordinatey double not null,
+        phone_number varchar(255),
+        restaurant_name varchar(255),
+        primary key (place_id)
+    )
+2021-08-14 01:51:28.217  INFO 6552 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-08-14 01:51:28.245  INFO 6552 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-08-14 01:51:29.546  WARN 6552 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-08-14 01:51:31.498  INFO 6552 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 13078 (http) with context path ''
+2021-08-14 01:51:31.532  INFO 6552 --- [    Test worker] c.c.c.controller.PlaceControllerTest     : Started PlaceControllerTest in 14.211 seconds (JVM running for 20.692)
+2021-08-14 01:51:32.414  INFO 6552 --- [o-auto-1-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-14 01:51:32.415  INFO 6552 --- [o-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-14 01:51:32.418  INFO 6552 --- [o-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2021-08-14 01:51:32.725 DEBUG 6552 --- [o-auto-1-exec-2] org.hibernate.SQL                        : 
+    call next value for hibernate_sequence
+Hibernate: 
+    call next value for hibernate_sequence
+2021-08-14 01:51:32.830 DEBUG 6552 --- [o-auto-1-exec-2] org.hibernate.SQL                        : 
+    insert 
+    into
+        place
+        (coordinatex, coordinatey, phone_number, restaurant_name, place_id) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        place
+        (coordinatex, coordinatey, phone_number, restaurant_name, place_id) 
+    values
+        (?, ?, ?, ?, ?)
+2021-08-14 01:51:32.847  INFO 6552 --- [o-auto-1-exec-2] c.c.c.controller.PlaceController         : placeId :1
+2021-08-14 01:51:33.460 DEBUG 6552 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        place0_.place_id as place_id1_0_,
+        place0_.coordinatex as coordina2_0_,
+        place0_.coordinatey as coordina3_0_,
+        place0_.phone_number as phone_nu4_0_,
+        place0_.restaurant_name as restaura5_0_ 
+    from
+        place place0_
+Hibernate: 
+    select
+        place0_.place_id as place_id1_0_,
+        place0_.coordinatex as coordina2_0_,
+        place0_.coordinatey as coordina3_0_,
+        place0_.phone_number as phone_nu4_0_,
+        place0_.restaurant_name as restaura5_0_ 
+    from
+        place place0_
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
