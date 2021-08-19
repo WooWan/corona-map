@@ -8,12 +8,12 @@ const patientListStyle = css`
     flex-direction : column;
     margin-top:20px;
 `
-const PatientList = ({patients}) => {
-    console.log(patients)
+const PatientList = ({patients, onDelete}) => {
+
     return(
         <div className="patient_list" css={patientListStyle}>
             {Object.keys(patients).map((key) =>
-                <Patient key={key} patient ={patients[key]} />
+                <Patient key={key} patient ={patients[key]} onDelete = {onDelete} />
             )}
         </div>
     )

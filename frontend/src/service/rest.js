@@ -18,6 +18,13 @@ class Rest{
         console.log(response)
         return response.data;
     }
+    async deletePatient(patient){
+        console.log(patient)
+        console.log(patient.id)
+        const id = patient.id
+        await axios.delete(`/places/${id}`)
+        // await axios.delete('/places/'+patient.id)
+    }
 }
 
 export default Rest;

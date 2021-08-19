@@ -25,5 +25,9 @@ public class PlaceService {
         return placeRepository.save(requestDto.toEntity()).getId();
     }
 
+    @Transactional
+    public void deletePatient(Long id) {
+        placeRepository.deleteById(id);
+    }
 
 }

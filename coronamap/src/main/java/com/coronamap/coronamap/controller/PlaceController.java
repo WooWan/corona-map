@@ -36,6 +36,10 @@ public class PlaceController {
         return collect;
     }
 
+    @DeleteMapping("/places/{id}")
+    public void deletePatient(@PathVariable Long id) {
+        placeService.deletePatient(id);
+    }
 //    @PutMapping("/places/{id}")
 //    public UpdatePlaceResponse updatePlace(@PathVariable Long id, @RequestBody ){
 //

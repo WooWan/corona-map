@@ -30,19 +30,44 @@ const Sidebar = ({keyword, rest}) =>{
 
     const [patients, setPatients] = useState({});
 
-    useEffect(()=>{
-        const sync = rest.getPatients()
-            .then(result  => setPatients(result))
-        console.log(place);
-    }, [rest,place])
+    // useEffect(()=>{
+    //     const sync = rest.getPatients()
+    //         .then(result  => {
+    //             console.log(result);
+    //             return setPatients(result)
+    //         })
+    // }, [rest,place])
     const onSubmit =() =>{
         const placeDate = {
             ...place,
             "date": getDate()
             }
-        rest.savePatient(placeDate).then(r => console.log(r));
-        const updated = {...patients, placeDate}
-        setPatients(updated);
+        rest.savePatient(placeDate)
+            .then(response =>response.data.id)
+            .then(id => {
+                placeDate.id= id
+                const updated = {...patients}
+                updated[id]= placeDate
+                setPatients(updated)
+            })
+        console.log(patients)
+
+    }
+    const onDelete = (patient)=>{
+        rest.deletePatient(patient)
+            .then(setPatients(patients =>{
+                const updated= {...patients}
+                const id = patient.id
+                delete updated[id]
+                console.log(updated);
+                return updated
+            }))
+        // setPatients(patients =>{
+        //     const updated= {...patients}
+        //     delete updated[patient.id]
+        //     return updated
+        // })
+
     }
 
     const getDate = () => {
@@ -61,8 +86,8 @@ const Sidebar = ({keyword, rest}) =>{
                 onChange={(date) => setDate(date)}
             />
             <Preview keyword={keyword} />
-            <input type="button" onClick={onSubmit} value="동선 추가하기" css={buttonStyle}></input>
-            <PatientList patients={patients} />
+            <input type="button" onClick={onSubmit} value="동선 추가하기" css={buttonStyle} />
+            <PatientList patients={patients} onDelete={onDelete}/>
         </div>
     )
 }
