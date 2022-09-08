@@ -19,5 +19,3 @@ backend: rest api 구축, db 관리, jpa 도입
 front end: react hook, recoil 사용
 
 
-#### 현재 프로젝트는 코로나 환자 급증으로 프로젝트 리팩토링 진행 중입니다.
-
