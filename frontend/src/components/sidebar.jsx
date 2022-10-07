@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Preview from "./preview";
 import {css} from "@emotion/react";
 import DatePicker from "react-datepicker";
@@ -30,13 +30,6 @@ const Sidebar = ({keyword, rest}) =>{
 
     const [patients, setPatients] = useState({});
 
-    // useEffect(()=>{
-    //     const sync = rest.getPatients()
-    //         .then(result  => {
-    //             console.log(result);
-    //             return setPatients(result)
-    //         })
-    // }, [rest,place])
     const onSubmit =() =>{
         const placeDate = {
             ...place,
@@ -50,8 +43,6 @@ const Sidebar = ({keyword, rest}) =>{
                 updated[id]= placeDate
                 setPatients(updated)
             })
-        console.log(patients)
-
     }
     const onDelete = (patient)=>{
         rest.deletePatient(patient)
@@ -62,20 +53,13 @@ const Sidebar = ({keyword, rest}) =>{
                 console.log(updated);
                 return updated
             }))
-        // setPatients(patients =>{
-        //     const updated= {...patients}
-        //     delete updated[patient.id]
-        //     return updated
-        // })
-
     }
 
     const getDate = () => {
-        const year = date.getFullYear()
-        const month = date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth()
-        const day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate()
-        const formattedDate = `${year}-${month}-${day}`;
-        return formattedDate;
+      const year = date.getFullYear();
+      const month = date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth();
+      const day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+      return `${year}-${month}-${day}`;
     }
     return(
         <div className ="Sidebar" css = {sidebarStyle}>

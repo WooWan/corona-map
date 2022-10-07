@@ -12,7 +12,7 @@ const Patient = ({patient, onDelete}) => {
         console.log(patient)
         onDelete(patient)
     }
-    const {placeName, addressName, coordinateX, coordinateY, phoneNumber} = patient
+    const {placeName, addressName, phoneNumber} = patient
     return(
         <div className="patient" css={patientStyle}>
             <div className="placeName">{placeName}</div>

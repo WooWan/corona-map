@@ -22,7 +22,7 @@ const SearchBar = ({onSearch}) => {
         onSubmit();
     }
     const onEnter =(event) =>{
-        if (event.key=='Enter'){
+        if (event.key==='Enter'){
             onSubmit();
         }
     }
@@ -32,7 +32,7 @@ const SearchBar = ({onSearch}) => {
             <form ref={formRef}  className="searchForm">
                 <div className="searchContainer">
                     <input ref = {placeRef} type="text" className="searchInput" />
-                    <button className="searchButton" onClick={onClick} onKeyDown={onEnter}></button>
+                    <button className="searchButton" onClick={onClick} onKeyDown={onEnter}/>
                 </div>
             </form>
         </div>

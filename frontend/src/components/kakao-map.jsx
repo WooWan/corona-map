@@ -2,13 +2,12 @@
 /** @jsxImportSource @emotion/react */
 import React, {useEffect, useState} from 'react';
 import {css} from "@emotion/react";
-import {atom, useRecoilState} from "recoil";
+import {useRecoilState} from "recoil";
 import {placeState} from "../state/state";
 
 const mapStyle =css`
     width : 100vh;
     height : 100vh;
-    // z-index : ;
     flex: 8.5;
 `
 const KakaoMap = ({keyword}) => {
@@ -24,10 +23,7 @@ const KakaoMap = ({keyword}) => {
             level: 4 //지도의 레벨(확대, 축소 정도)
         };
         let map = new kakao.maps.Map(container, options);
-        // kakao.maps.event.addListener(map, 'click', () =>{
-        //
-        // })
-        // var infowindow = new kakao.maps.InfoWindow({zIndex:1});
+
         const ps = new kakao.maps.services.Places();
         // 키워드로 장소를 검색합니다
         ps.keywordSearch(keyword, placesSearchCB);
@@ -36,7 +32,7 @@ const KakaoMap = ({keyword}) => {
             console.log(data[0])
             const {place_name, address_name, x, y, phone } = data[0];
 
-            setPlace((state) =>{
+            setPlace(() =>{
                 return  {
                     "placeName" : place_name,
                     "addressName" :address_name,
@@ -53,7 +49,7 @@ const KakaoMap = ({keyword}) => {
                         position: new kakao.maps.LatLng(place.y, place.x)
                     })
                 })
-                const distanceList = new Array();
+                const distanceList = [];
                 markers.forEach((m) => {
                     let c1 = map.getCenter();
                     let c2 = m.getPosition();
@@ -70,66 +66,19 @@ const KakaoMap = ({keyword}) => {
                 const sorted =distanceList.sort((a, b) => {
                     return a.distance-b.distance;
                 })
-                const {marker, distance} = sorted[0];
+                const {marker} = sorted[0];
 
                 map.setCenter(marker.getPosition());
                 setLat(marker.getPosition().getLat())
                 setLng(marker.getPosition().getLng())
                 // map.setCenter(marker.Pc.x , marker.Pc.y)
                 map.setLevel(4)
-                // console.log(sorted)
-                // console.log(distance[0])
-                // const {, }
-                // markers.forEach((m) =>{
-                //     let c1 = map.getCenter();
-                //     let c2 = m.getPosition();
-                //     let poly = new kakao.maps.Polyline({
-                //         // map: map, 을 하지 않아도 거리는 구할 수 있다.
-                //         path: [c1, c2]
-                //     });
-                //     const dist = poly.getLength(); // m 단위로 리턴
-                //     if (dist < radius) {
-                //         console.log("worker");
-                //         m.setMap(map);
-                //         map.setLevel(4);
-                //
-                //     } else {
-                //         m.setMap(null);
-                //     }
-                // })
-
-
-                // let bounds = new kakao.maps.LatLngBounds();
-                // for (let i=0; i<data.length; i++) {
-                //     displayMarker(data[i]);
-                //     bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x));
-                // }
-                // // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
-                // map.setBounds(bounds);
-                // displayMarker(data[0]);
-                // map.setLevel(4);
             }
         }
-
-        // function displayMarker(place) {
-        //     // 마커를 생성하고 지도에 표시합니다
-        //     var marker = new kakao.maps.Marker({
-        //         map: map,
-        //         position: new kakao.maps.LatLng(place.y, place.x)
-        //     });
-        //
-        //     // map.setCenter(new kakao.maps.LatLng(place.y, place.x));
-        //     // var markerPosition = new kakao.maps.LatLng(place.y, place.x);
-        //     // var marker = new kakao.maps.Marker({
-        //     //     position: markerPosition
-        //     // });
-        //     // marker.setMap(map);
-        // }
     }, [keyword])
 
     return(
-        <div id="kakao_map" css={mapStyle}>
-        </div>
+        <div id="kakao_map" css={mapStyle}/>
     )
 
 }
